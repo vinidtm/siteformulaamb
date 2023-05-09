@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoPlayer from './VideoPlayer';
 import Comments from './Comments';
-import headline1 from './fotos/headline1'
+import headline1 from './fotos/head1.gif'
 
 
 function Header () {
