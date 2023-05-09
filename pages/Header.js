@@ -7,8 +7,8 @@ import headline1 from './fotos/headline1'
 function Header () {
   return (
     <div>
-        <div className="video-player-container">
         <Image src={headline1} width={900}/>
+        <div className="video-player-container">
         <VideoPlayer />
         </div>
         <Comments/>
