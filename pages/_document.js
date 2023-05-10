@@ -13,6 +13,16 @@ class MyDocument extends Document {
             }}
           />
           {/* End Google Tag Manager */}
+
+    <link rel="preload" href="https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/645ab8f1ad718e000969cfa9/player.js" as="script" />
+    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script" />
+    <link rel="preload" href="https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/645ab8f1ad718e000969cfa9/thumbnail.jpg" as="image" />
+    <link rel="preload" href="https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/644d35d98857f7000ae57159/playlist.m3u8" as="fetch" />
+    <link rel="dns-prefetch" href="https://cdn.converteai.net" />
+    <link rel="dns-prefetch" href="https://scripts.converteai.net" />
+    <link rel="dns-prefetch" href="https://images.converteai.net" />
+    <link rel="dns-prefetch" href="https://api.vturb.com.br" />
+    
         <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
