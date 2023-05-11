@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
+import Script from '../utm/Script';
 function Footer() {
   return (
     <footer className="footer">
@@ -12,6 +12,7 @@ function Footer() {
           <p>E-mail: contato@luvard.com</p>
           <a Link href="Termos_de_Uso">Termos de Uso</a> |{' '}
           <a Link href="Politica_de_Privacidade">Política de Privacidade</a>
+          <script src={Script} />
         </div>
       </div>
     </footer>
