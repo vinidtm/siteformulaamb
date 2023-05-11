@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { useEffect } from 'react';
 
 class MyDocument extends Document {
   render() {
@@ -34,7 +33,7 @@ class MyDocument extends Document {
     />
     {/* End Google Tag Manager (noscript) */}
           <Main />
-          <NextScript />        
+          <NextScript />      
         </body>
       </Html>
     );
