@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import '../styles/global.css'; // Importe o arquivo de estilo global
+import { Analytics } from '@vercel/analytics/react';
 
 const pageTitles = {
   '/': 'Fórmula A.M.B',
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
         <title>{pageTitle}</title>
       </Head>
       <Component {...pageProps} />
+      <Analytics/>
     </>
   );
 }
