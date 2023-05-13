@@ -22,7 +22,6 @@ class MyDocument extends Document {
     <link rel="dns-prefetch" href="https://images.converteai.net" />
     <link rel="dns-prefetch" href="https://api.vturb.com.br" />
     
-        <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           {/* Google Tag Manager (noscript) */}
