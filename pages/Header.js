@@ -2,7 +2,7 @@ import React from 'react';
 import VideoPlayer from './VideoPlayer';
 import Comments from './Comments';
 import Image from 'next/image';
-import headline1 from './fotos/head1.gif'
+import headline2 from './fotos/head2.gif'
 
 
 function Header () {
@@ -10,7 +10,7 @@ function Header () {
     <div>
         <div className='headline-container'>
           <div className='.conteiner'>
-          <Image src={headline1} layout="responsive" maxWidth={100} />
+          <Image src={headline2} layout="responsive" maxWidth={100} />
         </div>
         </div>
         <div className="video-player-container">
