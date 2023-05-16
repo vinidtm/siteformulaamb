@@ -8,9 +8,20 @@
 /* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
   min-height: 100vh;
   position: relative;
+  padding-bottom: 200px;
+}
+
+.fundo-branco {
+  background-color: #fff;
+  min-height: 100vh;
+  padding-bottom: 200px;
+}
+
+.fundo-verde {
+  background-color: #009C87;
+  min-height: 100vh;
   padding-bottom: 200px;
 }
 
