@@ -20,7 +20,7 @@ body {
 }
 
 .fundo-verde {
-  background-color: #009C87;
+  background-color: #009c87;
   min-height: 100vh;
   padding-bottom: 200px;
 }
@@ -46,7 +46,7 @@ h1 {
 }
 
 h2 {
-  font-size:20px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -72,7 +72,6 @@ p {
   .headline-container {
     max-width: 100%;
     padding: 10px;
-
   }
   h1 {
     font-size: 25px;
@@ -80,10 +79,10 @@ p {
   }
 
   h2 {
-    font-size:20px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
-  
+
   p {
     font-size: 15px;
     margin-bottom: 20px;
@@ -92,7 +91,6 @@ p {
   .container-rodape {
     flex-direction: column;
   }
-
 }
 
 .video-player-container {
@@ -107,7 +105,6 @@ p {
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 25px;
-  
 }
 
 /* Estilos do footer */
@@ -120,7 +117,6 @@ p {
   bottom: 0; /* Adicione essa propriedade */
   left: 0; /* Adicione essa propriedade */
   width: 100%; /* Adicione essa propriedade */
-
 }
 
 .container-rodape {
@@ -263,7 +259,7 @@ tr {
 /* Estilos para quantidade de curtidas */
 .fb-comments-comment-actions likes {
   font-size: 13px;
-  background:0;
+  background: 0;
   background-repeat: no-repeat;
   padding: 3px 6px 2px 43px;
   margin-top: -10px;
@@ -306,4 +302,44 @@ tr {
   justify-content: center;
   align-items: center;
 }
+
+.promotion-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8e71c;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.page-visitors {
+  position: fixed;
+  top: 0;
+  width: 250vh;
+  height: 5vh; 
+  background-color: rgba(255, 165, 0, 0.5); 
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.p {
+  margin-left: 20px;
+  
+}
+
+@media only screen and (max-width: 480px) {
+  .p {
+    margin-left: 10px;
+    
+  }
+}
+
+
+
+
 

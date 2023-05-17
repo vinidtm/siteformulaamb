@@ -30,32 +30,6 @@ class MyDocument extends Document {
               `,
             }}
           />
-          {/* End Google Analytics */}
-          {/* Preload links */}
-          <link
-            rel='preload'
-            href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js'
-            as='script'
-          />
-          <link
-            rel='preload'
-            href='https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js'
-            as='script'
-          />
-          <link
-            rel='preload'
-            href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/thumbnail.jpg'
-            as='image'
-          />
-          <link
-            rel='preload'
-            href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64640a8f0011730009a5f716/main.m3u8'
-            as='fetch'
-          />
-          <link rel='dns-prefetch' href='https://cdn.converteai.net' />
-          <link rel='dns-prefetch' href='https://scripts.converteai.net' />
-          <link rel='dns-prefetch' href='https://images.converteai.net' />
-          <link rel='dns-prefetch' href='https://api.vturb.com.br' />
         </Head>
         <body>
           {/* Google Tag Manager (noscript) */}

@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/amb", "dest": "/middleware/ab-test" },
+    { "src": "/AmbA", "dest": "/AmbA" },
+    { "src": "/AmbB", "dest": "/AmbB" }
+  ]
+}
