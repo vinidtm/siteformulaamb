@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Cookies from 'cookies';
 import '../styles/global.css';
 
 const pageTitles = {
@@ -41,9 +42,28 @@ function MyApp({ Component, pageProps }) {
     const interval = setInterval(() => {
       const newCount = Math.floor(Math.random() * 101) + 50;
       setVisitorsCount(newCount);
-    }, 5000); 
+    }, 5000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
+  }, []);
+
+  // A/B testing
+  useEffect(() => {
+    let experiment;
+
+    if (document.cookie.split('; ').find((row) => row.startsWith('abTest'))) {
+      experiment = document.cookie
+        .split('; ')
+        .find((row) => row.startsWith('abTest'))
+        .split('=')[1];
+    } else {
+      experiment = Math.random() < 0.5 ? 'AmbA' : 'AmbB';
+      document.cookie = `abTest=${experiment}; max-age=900000; path=/`;
+    }
+
+    if (router.pathname === '/') {
+      router.push(`/${experiment}`);
+    }
   }, []);
 
   return (
