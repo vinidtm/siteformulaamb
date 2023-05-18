@@ -1,7 +1,8 @@
 {
-  "routes": [
-    { "src": "/amb", "dest": "/middleware/ab-test" },
-    { "src": "/AmbA", "dest": "/AmbA" },
-    { "src": "/AmbB", "dest": "/AmbB" }
+  "rewrites": [
+    { "source": "/amb/(.*)", "destination": "/api/ab-test" },
+    { "source": "/amb", "destination": "/api/ab-test" },
+    { "source": "/AmbA", "destination": "/AmbA" },
+    { "source": "/AmbB", "destination": "/AmbB" }
   ]
 }
