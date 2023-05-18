@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/amb/(.*)", "destination": "/api/ab-test" },
-    { "source": "/amb", "destination": "/api/ab-test" },
+    { "source": "/amb/(.*)", "destination": "/middleware/ab-test" },
+    { "source": "/amb", "destination": "/middleware/ab-test" },
     { "source": "/AmbA", "destination": "/AmbA" },
     { "source": "/AmbB", "destination": "/AmbB" }
   ]
