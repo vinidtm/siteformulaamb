@@ -76,7 +76,10 @@ function MyApp({ Component, pageProps }) {
 
       {typeof visitorsCount === 'number' && (
         <div className='page-visitors'>
-          <p className='p'>{visitorsCount} pessoas estão na página</p>
+          <p className='p'>
+            <p className='visitors'>{visitorsCount}</p> pessoas estão assistindo
+            a esse vídeo.
+          </p>
         </div>
       )}
     </>

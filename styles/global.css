@@ -103,7 +103,7 @@ p {
 .headline-container {
   max-width: 900px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 25px;
 }
 
@@ -282,7 +282,6 @@ tr {
   text-decoration: underline;
 }
 
-/* Estilos para botão "carregar mais" */
 .fb-comments-loadmore {
   background: #4080ff;
   border: 1px solid #4080ff;
@@ -329,10 +328,19 @@ tr {
   border-radius: 0;
 }
 
+.visitors {
+  display: inline-block;
+  font-size: 20px;
+  margin-bottom: -10px;
+}
+
 .p {
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  padding-top: 10px;
+  font-size: 18px; 
 }
 
 @media only screen and (max-width: 480px) {
@@ -340,6 +348,7 @@ tr {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    padding-top: 10px; 
   }
 }
 
