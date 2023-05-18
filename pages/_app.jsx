@@ -73,11 +73,7 @@ function MyApp({ Component, pageProps }) {
         <link rel='shortcut icon' href='/fotos/Icon.jpeg' />
       </Head>
       <Component {...pageProps} />
-      {showPromotion && (
-        <div className='promotion-banner'>
-          <p>Aproveite nossa promoção especial antes de sair!</p>
-        </div>
-      )}
+
       {typeof visitorsCount === 'number' && (
         <div className='page-visitors'>
           <p className='p'>{visitorsCount} pessoas estão na página</p>

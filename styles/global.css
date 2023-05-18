@@ -316,28 +316,34 @@ tr {
 
 .page-visitors {
   position: fixed;
-  top: 0;
-  width: 250vh;
-  height: 5vh; 
-  background-color: rgba(255, 165, 0, 0.5); 
+  top: 0; 
+  left: 0;    
+  right: 0;   
+  margin: auto; 
+  background-color: #ffa500; 
   color: white;
-  padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 9999;
+  text-align: center;  
+  border-radius: 0;
 }
 
 .p {
-  margin-left: 20px;
-  
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 @media only screen and (max-width: 480px) {
   .p {
-    margin-left: 10px;
-    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
+
+
 
 
 
