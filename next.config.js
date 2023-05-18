@@ -7,7 +7,7 @@ module.exports = {
       },
       {
         source: '/amb/:path*',
-        destination: '/AmbA/:path*',
+        destination: '/:path*',
       },
     ];
   },
