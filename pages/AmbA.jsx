@@ -3,7 +3,7 @@ import Footer from './Footer';
 import VideoPlayer from './VideoPlayer';
 import Comments from './Comments';
 import Image from 'next/image';
-import cientista_r_v from './fotos/cientista_r_v.gif'
+import h1fv from './fotos/h1fv.gif'
 
 
 function Amb() {
@@ -11,7 +11,7 @@ function Amb() {
     <div className='fundo-verde'>
       <div className='headline-container'>
           <div className='.conteiner'>
-          <Image src={cientista_r_v} layout="responsive" maxWidth={100} />
+          <Image src={h1fv} layout="responsive" maxWidth={100} />
         </div>
         </div>
         <div className="video-player-container">
