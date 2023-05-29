@@ -14,8 +14,8 @@ import imagem11 from './fotos/i11.webp';
 import imagem12 from './fotos/i12.webp';
 
 const Comment = () => {
-  const [showMore, setShowMore] = useState(false);
   const [commentTimes, setCommentTimes] = useState([]);
+  const [numCommentsToShow, setNumCommentsToShow] = useState(7); 
 
   useEffect(() => {
     const times = Array(12)
@@ -25,7 +25,7 @@ const Comment = () => {
   }, []);
 
   const loadMore = () => {
-    setShowMore(!showMore);
+    setNumCommentsToShow((prevNumCommentsToShow) => prevNumCommentsToShow + 7); 
   };
 
   const randomTime = () => {
@@ -140,7 +140,7 @@ const Comment = () => {
             <span>{comments.length} comentários</span>
           </div>
           <section className='fb-comments' id='2'>
-            {comments.map((comment) => (
+            {comments.slice(0, numCommentsToShow).map((comment) => (
               <div className='fb-comments-wrapper' key={comment.id}>
                 <table className='fb-comments-comment'>
                   <tbody>
@@ -171,7 +171,7 @@ const Comment = () => {
               </div>
             ))}
           </section>
-          {!showMore && (
+          {numCommentsToShow < comments.length && (
             <div className='button-container'>
               <button className='fb-comments-loadmore' onClick={loadMore}>
                 Carregar mais 5 comentários...
