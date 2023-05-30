@@ -51,7 +51,7 @@ function VideoPlayer() {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js';
+    script.src = 'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6475335b65ce7000094b67d9/player.js';
     script.async = true;
     document.head.appendChild(script);
 
@@ -64,12 +64,12 @@ function VideoPlayer() {
   return (
     <div>
       <div
-        id='vid_64640aa31503a50008ca2b37'
+        id='vid_6475335b65ce7000094b67d9'
         style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
       >
         <img
-          id='thumb_64640aa31503a50008ca2b37'
-          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/thumbnail.jpg'
+          id='thumb_6475335b65ce7000094b67d9'
+          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6475335b65ce7000094b67d9/thumbnail.jpg'
           alt=''
           style={{
             position: 'absolute',
@@ -82,7 +82,7 @@ function VideoPlayer() {
           }}
         />
         <div
-          id='backdrop_64640aa31503a50008ca2b37'
+          id='backdrop_6475335b65ce7000094b67d9'
           style={{
             position: 'absolute',
             top: 0,
@@ -95,7 +95,7 @@ function VideoPlayer() {
       </div>
       <link
         rel='preload'
-        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js'
+        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6475335b65ce7000094b67d9/player.js'
         as='script'
       />
       <link
@@ -105,12 +105,12 @@ function VideoPlayer() {
       />
       <link
         rel='preload'
-        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/thumbnail.jpg'
+        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6475335b65ce7000094b67d9/thumbnail.jpg'
         as='image'
       />
       <link
         rel='preload'
-        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64640a8f0011730009a5f716/main.m3u8'
+        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/6475335065ce7000094b67d2/main.m3u8'
         as='fetch'
       />
       <link rel='dns-prefetch' href='https://cdn.converteai.net' />
