@@ -5,7 +5,7 @@ function VideoPlayer() {
   const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
 
   useEffect(() => {
-    const SECONDS_TO_DISPLAY = 702;
+    const SECONDS_TO_DISPLAY = 612;
     const CLASS_TO_DISPLAY = ".esconder";
 
     let attempts = 0;
