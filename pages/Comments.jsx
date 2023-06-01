@@ -12,10 +12,11 @@ import imagem9 from './fotos/i9.webp';
 import imagem10 from './fotos/i10.webp';
 import imagem11 from './fotos/i11.webp';
 import imagem12 from './fotos/i12.webp';
+import { FaRegThumbsUp } from 'react-icons/fa';
 
 const Comment = () => {
   const [commentTimes, setCommentTimes] = useState([]);
-  const [numCommentsToShow, setNumCommentsToShow] = useState(7); 
+  const [numCommentsToShow, setNumCommentsToShow] = useState(7);
 
   useEffect(() => {
     const times = Array(12)
@@ -25,7 +26,7 @@ const Comment = () => {
   }, []);
 
   const loadMore = () => {
-    setNumCommentsToShow((prevNumCommentsToShow) => prevNumCommentsToShow + 7); 
+    setNumCommentsToShow((prevNumCommentsToShow) => prevNumCommentsToShow + 7);
   };
 
   const randomTime = () => {
@@ -161,7 +162,7 @@ const Comment = () => {
                     </tr>
                     <tr>
                       <td className='fb-comments-comment-actions'>
-                        <like>Curtir ({comment.likes})</like>·
+                        <FaRegThumbsUp size={14} />({comment.likes})·
                         <reply>Comentar</reply>
                         <date>{comment.time}</date>
                       </td>

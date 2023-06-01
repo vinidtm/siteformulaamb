@@ -315,16 +315,16 @@ tr {
 
 .page-visitors {
   position: fixed;
-  top: 0; 
-  left: 0;    
-  right: 0;   
-  margin: auto; 
-  background-color: #ffa500; 
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #ffa500;
   color: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 9999;
-  text-align: center;  
+  text-align: center;
   border-radius: 0;
 }
 
@@ -332,6 +332,13 @@ tr {
   display: inline-block;
   font-size: 20px;
   margin-bottom: -10px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .page-visitors {
+    font-size: 16px;
+  }
 }
 
 .p {

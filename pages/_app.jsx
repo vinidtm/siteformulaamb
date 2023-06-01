@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const pageTitle = pageTitles[router.pathname] || 'Fórmula A.M.B';
   const [showPromotion, setShowPromotion] = useState(false);
-  const [visitorsCount, setVisitorsCount] = useState(100); // Valor inicial fictício
+  const [visitorsCount, setVisitorsCount] = useState(100);
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -47,24 +47,24 @@ function MyApp({ Component, pageProps }) {
     return () => clearInterval(interval);
   }, []);
 
-  // A/B testing
-  useEffect(() => {
-    let experiment;
+  // // A/B testing
+  // useEffect(() => {
+  //   let experiment;
 
-    if (document.cookie.split('; ').find((row) => row.startsWith('abTest'))) {
-      experiment = document.cookie
-        .split('; ')
-        .find((row) => row.startsWith('abTest'))
-        .split('=')[1];
-    } else {
-      experiment = Math.random() < 0.5 ? 'AmbA' : 'AmbB';
-      document.cookie = `abTest=${experiment}; max-age=900000; path=/`;
-    }
+  //   if (document.cookie.split('; ').find((row) => row.startsWith('abTest'))) {
+  //     experiment = document.cookie
+  //       .split('; ')
+  //       .find((row) => row.startsWith('abTest'))
+  //       .split('=')[1];
+  //   } else {
+  //     experiment = Math.random() < 0.5 ? 'AmbA' : 'AmbB';
+  //     document.cookie = `abTest=${experiment}; max-age=900000; path=/`;
+  //   }
 
-    if (router.pathname === '/') {
-      router.push(`/${experiment}`);
-    }
-  }, []);
+  //   if (router.pathname === '/') {
+  //     router.push(`/${experiment}`);
+  //   }
+  // }, []);
 
   return (
     <>
@@ -76,10 +76,10 @@ function MyApp({ Component, pageProps }) {
 
       {typeof visitorsCount === 'number' && (
         <div className='page-visitors'>
-          <p className='p'>
-            <p className='visitors'>{visitorsCount}</p> pessoas estão assistindo
-            a esse vídeo.
-          </p>
+          <div className='p'>
+            <div className='visitors'>{visitorsCount}</div> pessoas estão
+            assistindo a esse vídeo.
+          </div>
         </div>
       )}
     </>

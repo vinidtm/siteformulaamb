@@ -1,8 +1,6 @@
 {
   "rewrites": [
     { "source": "/amb/(.*)", "destination": "/middleware/ab-test" },
-    { "source": "/amb", "destination": "/middleware/ab-test" },
-    { "source": "/AmbA", "destination": "/AmbA" },
-    { "source": "/AmbB", "destination": "/AmbB" }
+    { "source": "/amb", "destination": "/middleware/ab-test" }
   ]
 }

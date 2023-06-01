@@ -6,7 +6,7 @@ function VideoPlayer() {
 
   useEffect(() => {
     const SECONDS_TO_DISPLAY = 702;
-    const CLASS_TO_DISPLAY = ".esconder";
+    const CLASS_TO_DISPLAY = '.esconder';
 
     let attempts = 0;
     let elsHiddenList = [];
@@ -21,13 +21,16 @@ function VideoPlayer() {
 
     const showHiddenElements = () => {
       elsDisplayed = true;
-      elsHiddenList.forEach((e) => (e.style.display = "block"));
+      elsHiddenList.forEach((e) => (e.style.display = 'block'));
       localStorage.setItem(alreadyDisplayedKey, true);
       setAreSectionsDisplayed(true);
     };
 
     const startWatchVideoProgress = () => {
-      if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+      if (
+        typeof smartplayer === 'undefined' ||
+        !(smartplayer.instances && smartplayer.instances.length)
+      ) {
         if (attempts >= 10) return;
         attempts += 1;
         return setTimeout(startWatchVideoProgress, 1000);
@@ -35,7 +38,8 @@ function VideoPlayer() {
 
       smartplayer.instances[0].on('timeupdate', () => {
         if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
-        if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+        if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY)
+          return;
         showHiddenElements();
       });
     };
@@ -45,18 +49,21 @@ function VideoPlayer() {
         showHiddenElements();
       }, 100);
     } else {
-      startWatchVideoProgress();
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (!isMobile) {
+        startWatchVideoProgress();
+      }
     }
   }, []);
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js';
+    script.src =
+      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js';
     script.async = true;
     document.head.appendChild(script);
 
     return () => {
-      // Remover o script quando o componente for desmontado
       document.head.removeChild(script);
     };
   }, []);
@@ -117,6 +124,30 @@ function VideoPlayer() {
       <link rel='dns-prefetch' href='https://scripts.converteai.net' />
       <link rel='dns-prefetch' href='https://images.converteai.net' />
       <link rel='dns-prefetch' href='https://api.vturb.com.br' />
+      <link
+        rel='preload'
+        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/player.js'
+        as='script'
+      />
+      <link
+        rel='preload'
+        href='https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js'
+        as='script'
+      />
+      <link
+        rel='preload'
+        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/thumbnail.jpg'
+        as='image'
+      />
+      <link
+        rel='preload'
+        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64344a1049342600085ed7d6/main.m3u8'
+        as='fetch'
+      />
+      <link rel='dns-prefetch' href='https://cdn.converteai.net' />
+      <link rel='dns-prefetch' href='https://scripts.converteai.net' />
+      <link rel='dns-prefetch' href='https://images.converteai.net' />
+      <link rel='dns-prefetch' href='https://api.vturb.com.br' />
 
       {areSectionsDisplayed && (
         <div>
@@ -128,4 +159,3 @@ function VideoPlayer() {
 }
 
 export default VideoPlayer;
-
