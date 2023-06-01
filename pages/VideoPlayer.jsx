@@ -2,14 +2,58 @@ import React, { useEffect, useState } from 'react';
 import Button from './Button';
 
 function VideoPlayer() {
-  const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
 
   useEffect(() => {
-    const BUTTON_DISPLAY_DELAY = 10000; 
+    const SECONDS_TO_DISPLAY = 702;
+    const CLASS_TO_DISPLAY = '.esconder';
 
-    const timerId = setTimeout(() => {
-      setIsButtonVisible(true);
-    }, BUTTON_DISPLAY_DELAY);
+    let attempts = 0;
+    let elsHiddenList = [];
+    let elsDisplayed = false;
+    const elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    const alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
+    const alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+    setTimeout(() => {
+      elsHiddenList = Array.prototype.slice.call(elsHidden);
+    }, 0);
+
+    const showHiddenElements = () => {
+      elsDisplayed = true;
+      elsHiddenList.forEach((e) => (e.style.display = 'block'));
+      localStorage.setItem(alreadyDisplayedKey, true);
+      setAreSectionsDisplayed(true);
+    };
+
+    const startWatchVideoProgress = () => {
+      if (
+        typeof smartplayer === 'undefined' ||
+        !(smartplayer.instances && smartplayer.instances.length)
+      ) {
+        if (attempts >= 10) return;
+        attempts += 1;
+        return setTimeout(startWatchVideoProgress, 1000);
+      }
+
+      smartplayer.instances[0].on('timeupdate', () => {
+        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+        if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY)
+          return;
+        showHiddenElements();
+      });
+    };
+
+    if (alreadyElsDisplayed === 'true') {
+      setTimeout(() => {
+        showHiddenElements();
+      }, 100);
+    } else {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (!isMobile) {
+        startWatchVideoProgress();
+      }
+    }
 
     return () => {
       clearTimeout(timerId);
@@ -109,7 +153,7 @@ function VideoPlayer() {
       <link rel='dns-prefetch' href='https://images.converteai.net' />
       <link rel='dns-prefetch' href='https://api.vturb.com.br' />
 
-      {isButtonVisible && (
+      {areSectionsDisplayed && (
         <div>
           <Button />
         </div>
