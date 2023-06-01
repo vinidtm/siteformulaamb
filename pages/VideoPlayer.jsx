@@ -64,6 +64,7 @@ function VideoPlayer() {
     document.head.appendChild(script);
 
     return () => {
+      // Remover o script quando o componente for desmontado
       document.head.removeChild(script);
     };
   }, []);
