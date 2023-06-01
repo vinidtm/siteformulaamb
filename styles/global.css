@@ -7,6 +7,7 @@
 
 /* Estilos gerais */
 body {
+  background-color: #009c87;
   font-family: Arial, sans-serif;
   min-height: 100vh;
   position: relative;
@@ -326,12 +327,12 @@ tr {
   z-index: 9999;
   text-align: center;
   border-radius: 0;
+  padding-bottom: 10px;
 }
 
 .visitors {
   display: inline-block;
   font-size: 20px;
-  margin-bottom: -10px;
 }
 
 /* Media query for smaller screens */
@@ -347,7 +348,7 @@ tr {
   margin-right: auto;
   text-align: center;
   padding-top: 10px;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -355,13 +356,18 @@ tr {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    padding-top: 10px; 
+    padding-top: 10px;
   }
 }
 
+.icon-like,
+.icon-love {
+  display: inline-block;
+  float: right;
+  margin-right: 2px; 
+  cursor: pointer;
+}
 
-
-
-
-
-
+.qnt {
+  margin-left: 5px;
+}

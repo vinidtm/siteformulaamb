@@ -46,7 +46,8 @@ function MyApp({ Component, pageProps }) {
 
     return () => clearInterval(interval);
   }, []);
-
+  /*Quando for o teste A/B so tirar do comentario e alterar os nomes caso necessarios 'AmbA' : 'AmbB'; e adicionar o codigo a seguir no vercel.json "{ "source": "/AmbA", "destination": "/AmbA" },
+    { "source": "/AmbB", "destination": "/AmbB" }" que sao as rotas para os testes */
   // // A/B testing
   // useEffect(() => {
   //   let experiment;

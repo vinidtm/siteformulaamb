@@ -3,6 +3,7 @@ import Button from './Button';
 
 function VideoPlayer() {
   const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
 
   useEffect(() => {
     const SECONDS_TO_DISPLAY = 702;
@@ -54,6 +55,16 @@ function VideoPlayer() {
         startWatchVideoProgress();
       }
     }
+
+    const BUTTON_DISPLAY_DELAY = 813; // Ajuste este valor para o número de milissegundos desejado
+
+    const timerId = setTimeout(() => {
+      setIsButtonVisible(true);
+    }, BUTTON_DISPLAY_DELAY);
+
+    return () => {
+      clearTimeout(timerId);
+    };
   }, []);
 
   useEffect(() => {
@@ -64,7 +75,6 @@ function VideoPlayer() {
     document.head.appendChild(script);
 
     return () => {
-      // Remover o script quando o componente for desmontado
       document.head.removeChild(script);
     };
   }, []);
@@ -150,7 +160,7 @@ function VideoPlayer() {
       <link rel='dns-prefetch' href='https://images.converteai.net' />
       <link rel='dns-prefetch' href='https://api.vturb.com.br' />
 
-      {areSectionsDisplayed && (
+      {isButtonVisible && (
         <div>
           <Button />
         </div>
