@@ -5,7 +5,7 @@ function VideoPlayer() {
   const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
 
   useEffect(() => {
-    const SECONDS_TO_DISPLAY = 702;
+    const SECONDS_TO_DISPLAY = 813;
     const CLASS_TO_DISPLAY = '.esconder';
 
     let attempts = 0;
@@ -63,7 +63,7 @@ function VideoPlayer() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js';
+      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/player.js';
     script.async = true;
     document.head.appendChild(script);
 
@@ -75,12 +75,12 @@ function VideoPlayer() {
   return (
     <div>
       <div
-        id='vid_64640aa31503a50008ca2b37'
+        id='vid_64789f8565ce7000094b8500'
         style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
       >
         <img
-          id='thumb_64640aa31503a50008ca2b37'
-          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/thumbnail.jpg'
+          id='thumb_64789f8565ce7000094b8500'
+          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/thumbnail.jpg'
           alt=''
           style={{
             position: 'absolute',
@@ -93,7 +93,7 @@ function VideoPlayer() {
           }}
         />
         <div
-          id='backdrop_64640aa31503a50008ca2b37'
+          id='backdrop_64789f8565ce7000094b8500'
           style={{
             position: 'absolute',
             top: 0,
@@ -104,30 +104,6 @@ function VideoPlayer() {
           }}
         ></div>
       </div>
-      <link
-        rel='preload'
-        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/player.js'
-        as='script'
-      />
-      <link
-        rel='preload'
-        href='https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js'
-        as='script'
-      />
-      <link
-        rel='preload'
-        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64640aa31503a50008ca2b37/thumbnail.jpg'
-        as='image'
-      />
-      <link
-        rel='preload'
-        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64640a8f0011730009a5f716/main.m3u8'
-        as='fetch'
-      />
-      <link rel='dns-prefetch' href='https://cdn.converteai.net' />
-      <link rel='dns-prefetch' href='https://scripts.converteai.net' />
-      <link rel='dns-prefetch' href='https://images.converteai.net' />
-      <link rel='dns-prefetch' href='https://api.vturb.com.br' />
       <link
         rel='preload'
         href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/player.js'
@@ -152,7 +128,7 @@ function VideoPlayer() {
       <link rel='dns-prefetch' href='https://scripts.converteai.net' />
       <link rel='dns-prefetch' href='https://images.converteai.net' />
       <link rel='dns-prefetch' href='https://api.vturb.com.br' />
-
+    
       {areSectionsDisplayed && (
         <div>
           <Button />
