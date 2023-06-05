@@ -58,17 +58,11 @@ function VideoPlayer() {
   }, []);
 
   useEffect(() => {
-    useEffect(() => {
-      const script = document.createElement('script');
-      script.src =
-        'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/player.js';
-      script.async = true;
-      document.head.appendChild(script);
-
-      return () => {
-        document.head.removeChild(script);
-      };
-    }, []);
+    const script = document.createElement('script');
+    script.src =
+      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64789f8565ce7000094b8500/player.js';
+    script.async = true;
+    document.head.appendChild(script);
 
     return () => {
       document.head.removeChild(script);
