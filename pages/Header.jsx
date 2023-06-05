@@ -24,6 +24,15 @@ function Header() {
 
   return (
     <div>
+      <div className='headline-container'>
+        <div className='.conteiner'>
+          <Image
+            src={isMobile ? headline3 : headline3Mobile}
+            layout='responsive'
+            maxWidth={100}
+          />
+        </div>
+      </div>
       <div className='video-player-container'>
         <VideoPlayer />
       </div>
