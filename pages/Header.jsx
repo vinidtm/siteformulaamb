@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import VideoPlayer from './VideoPlayer';
 import Comments from './Comments';
 import Image from 'next/image';
@@ -24,6 +25,10 @@ function Header() {
 
   return (
     <div>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </Head>
+
       <div className='headline-container'>
         <div className='.conteiner'>
           <Image

@@ -71,7 +71,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>{pageTitle}</title>
-        <link rel='shortcut icon' href='/fotos/Icon.jpeg' />
       </Head>
       <Component {...pageProps} />
 

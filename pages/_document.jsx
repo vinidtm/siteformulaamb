@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel='shortcut icon' href='/Icon.jpeg' />
           {/* Google Tag Manager */}
           <script
             dangerouslySetInnerHTML={{
