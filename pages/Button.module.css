@@ -1,41 +1,40 @@
 .button {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 10000000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 10000000;
+}
+
+.button button {
+  background-color: #E94801;
+  color: #fff;
+  font-size: 25px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
   .button button {
-    background-color: #E94801;
-    color: #fff;
-    font-size: 25px;
-    padding: 20px 40px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    animation: pulse 1.5s infinite;
-    transform-origin: center;
+    font-size: 20px;
+    padding: 16px 32px;
   }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.9);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .button button {
-      font-size: 20px;
-      padding: 8px 16px;
-    }
-  }
-  
+}
