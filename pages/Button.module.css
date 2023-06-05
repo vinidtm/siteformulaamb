@@ -20,6 +20,18 @@
   transform-origin: center;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 480px) {
   .button button {
     font-size: 16px;

@@ -48,6 +48,11 @@ function VideoPlayer() {
       setTimeout(() => {
         showHiddenElements();
       }, 100);
+    } else {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (!isMobile) {
+        startWatchVideoProgress();
+      }
     }
 
     return () => {
