@@ -5,7 +5,7 @@ function VideoPlayer() {
   const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
 
   useEffect(() => {
-    const SECONDS_TO_DISPLAY = 813;
+    const SECONDS_TO_DISPLAY = 10;
     const CLASS_TO_DISPLAY = '.esconder';
 
     let attempts = 0;
@@ -128,7 +128,7 @@ function VideoPlayer() {
       <link rel='dns-prefetch' href='https://scripts.converteai.net' />
       <link rel='dns-prefetch' href='https://images.converteai.net' />
       <link rel='dns-prefetch' href='https://api.vturb.com.br' />
-    
+
       {areSectionsDisplayed && (
         <div>
           <Button />
