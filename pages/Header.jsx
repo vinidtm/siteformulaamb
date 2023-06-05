@@ -25,11 +25,18 @@ function Header() {
   return (
     <div>
       <div className='headline-container'>
-        <div className='.conteiner'>
+        <div className='container'>
           <Image
-            src={isMobile ? headline3 : headline3Mobile}
+            src={headline3}
             layout='responsive'
             maxWidth={100}
+            style={{ display: isMobile ? 'block' : 'none' }}
+          />
+          <Image
+            src={headline3Mobile}
+            layout='responsive'
+            maxWidth={100}
+            style={{ display: isMobile ? 'none' : 'block' }}
           />
         </div>
       </div>
