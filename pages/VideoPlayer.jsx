@@ -96,8 +96,7 @@ function VideoPlayer() {
             top: 0,
             width: '100%',
             height: '100%',
-            WebkitBackdropFilter: 'blur(5px)',
-            backdropFilter: 'blur(5px)',
+            
           }}
         ></div>
       </div>

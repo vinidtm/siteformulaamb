@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const Script = () => {
   useEffect(() => {
-    let prefix = ['https://pay.kiwify.com.br'];
+    let prefix = ['https://pay.hotmart.com'];
 
     function getParams() {
       let t = '',

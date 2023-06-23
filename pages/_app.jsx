@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Cookies from 'cookies';
 import '../styles/global.css';
 
 const pageTitles = {
-  '/': 'Fórmula A.M.B',
+  '/Page01': 'Fórmula A.M.B',
   '/Termos_de_Uso': 'Termos de Uso',
   '/Politica_de_Privacidade': 'Política de Privacidade',
+  '/Page02': 'Página 2',
+  '/Page03': 'Página 3',
 };
 
 function MyApp({ Component, pageProps }) {
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
   const pageTitle = pageTitles[router.pathname] || 'Fórmula A.M.B';
   const [showPromotion, setShowPromotion] = useState(false);
   const [visitorsCount, setVisitorsCount] = useState(100);
+  const [isHomePage, setIsHomePage] = useState(true);
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -46,26 +48,10 @@ function MyApp({ Component, pageProps }) {
 
     return () => clearInterval(interval);
   }, []);
-  /*Quando for o teste A/B so tirar do comentario e alterar os nomes caso necessarios 'AmbA' : 'AmbB'; e adicionar o codigo a seguir no vercel.json "{ "source": "/AmbA", "destination": "/AmbA" },
-    { "source": "/AmbB", "destination": "/AmbB" }" que sao as rotas para os testes */
-  // // A/B testing
-  // useEffect(() => {
-  //   let experiment;
 
-  //   if (document.cookie.split('; ').find((row) => row.startsWith('abTest'))) {
-  //     experiment = document.cookie
-  //       .split('; ')
-  //       .find((row) => row.startsWith('abTest'))
-  //       .split('=')[1];
-  //   } else {
-  //     experiment = Math.random() < 0.5 ? 'AmbA' : 'AmbB';
-  //     document.cookie = `abTest=${experiment}; max-age=900000; path=/`;
-  //   }
-
-  //   if (router.pathname === '/') {
-  //     router.push(`/${experiment}`);
-  //   }
-  // }, []);
+  useEffect(() => {
+    setIsHomePage(router.pathname === '/');
+  }, [router.pathname]);
 
   return (
     <>
@@ -74,7 +60,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
 
-      {typeof visitorsCount === 'number' && (
+      {isHomePage && typeof visitorsCount === 'number' && (
         <div className='page-visitors'>
           <div className='p'>
             <div className='visitors'>{visitorsCount}</div> pessoas estão

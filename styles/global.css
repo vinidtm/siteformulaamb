@@ -364,7 +364,7 @@ tr {
 .icon-love {
   display: inline-block;
   float: right;
-  margin-right: 2px; 
+  margin-right: 2px;
   cursor: pointer;
 }
 
@@ -372,3 +372,36 @@ tr {
   margin-left: 5px;
 }
 
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+  background-color: #f5f5f5;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.step {
+  flex: 1;
+  padding: 1em;
+  text-align: center;
+  color: #888;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.completed {
+  color: #444;
+  background-color: #d4edda;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}

@@ -6,7 +6,7 @@ import Script from './Script';
 const Button = () => {
   return (
     <div className={`${styles.button} ${styles.show}`}>
-      <Link href={'https://pay.kiwify.com.br/hEB0eI7'}>
+      <Link href={'https://pay.hotmart.com/B84078433G?checkoutMode=10'}>
         <button>EU QUERO COMEÇAR A EMAGRECER HOJE</button>
       </Link>
       <Script />
