@@ -58,7 +58,7 @@ const Comment = () => {
         {
           id: '1',
           image: imagem13,
-          name: 'Fernanda',
+          name: 'Fernanda Da Silva Leme',
           text: 'Simm, no final do vídeo ele esplica certinho. Eu fiz e até agora ja perdi 4kg 😍😍',
           time: replyTimes[2],
           likes: 5,
@@ -66,7 +66,7 @@ const Comment = () => {
         {
           id: '2',
           image: imagem15,
-          name: 'Gabriela',
+          name: 'Gabriela Baldez Garcia',
           text: 'Funciona muitooo, essa fórmula do Marcos me ajudor a perder 9kg!!!',
           time: replyTimes[3],
           likes: 2,
@@ -84,7 +84,7 @@ const Comment = () => {
         {
           id: '2',
           image: imagem14,
-          name: 'Marcia',
+          name: 'Marcia Ferreira Dos Santos',
           text: 'Nunca tinha visto algo parecido, vou testar!😘😘😘',
           time: commentTimes[4],
           likes: 10,
@@ -139,7 +139,7 @@ const Comment = () => {
     {
       id: '10',
       image: imagem8,
-      name: 'Mario Roberto Gomes',
+      name: 'Maria Fernanda',
       text: 'Hoje fez 5 dias tomando e 1 klos já conseguir eliminar tô muito feliz obrigado Marcos 😍😍😍',
       time: commentTimes[7],
       likes: 27,
