@@ -7,7 +7,7 @@
 
 /* Estilos gerais */
 body {
-  background-color: #009c87;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
   min-height: 100vh;
   position: relative;
@@ -21,7 +21,7 @@ body {
 }
 
 .fundo-verde {
-  background-color: #009c87;
+  background-color: #ffffff;
   min-height: 100vh;
   padding-bottom: 200px;
 }
@@ -153,6 +153,20 @@ p {
   margin: auto;
   position: relative;
   color: #4267b2;
+}
+
+.fb-comments-mini {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.linha-vertical {
+  height: 100px;
+  border-left: 2px solid;
+  border-color: rgb(187, 180, 180);
+  opacity: 0.5;
 }
 
 .fb-comments-header {
@@ -339,6 +353,7 @@ tr {
 @media only screen and (max-width: 600px) {
   .page-visitors {
     font-size: 16px;
+    padding: 10px;
   }
 }
 

@@ -4,8 +4,8 @@ import VideoPlayer from './VideoPlayer';
 import VideoPlayer02 from './VideoPlayer02'; 
 import Comments from './Comments';
 import Image from 'next/image';
-import headline3 from './fotos/HEADCELULAR.gif';
-import headline3Mobile from './fotos/HEADDESKTOP.gif';
+import headline3 from './fotos/celularGIF.gif';
+import headline3Mobile from './fotos/pcGIF.gif';
 import { useRouter } from 'next/router'; 
 
 function Header() {

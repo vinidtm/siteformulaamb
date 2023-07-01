@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import imagem1 from './fotos/i1.webp';
+import imagem1 from './fotos/i1.jpg';
 import imagem2 from './fotos/i2.webp';
 import imagem3 from './fotos/i3.webp';
-import imagem4 from './fotos/i4.webp';
-import imagem5 from './fotos/i5.webp';
-import imagem6 from './fotos/i6.webp';
-import imagem7 from './fotos/i7.webp';
-import imagem8 from './fotos/i8.webp';
-import imagem9 from './fotos/i9.webp';
-import imagem10 from './fotos/i10.webp';
-import imagem11 from './fotos/i11.webp';
-import imagem12 from './fotos/i12.webp';
+import imagem4 from './fotos/i4.jpg';
+import imagem5 from './fotos/i5.jpg';
+import imagem6 from './fotos/i6.jpg';
+import imagem7 from './fotos/i7.jpg';
+import imagem8 from './fotos/i8.jpg';
+import imagem9 from './fotos/i9.jpg';
+import imagem10 from './fotos/i10.jpg';
+import imagem11 from './fotos/i11.jpg';
+import imagem12 from './fotos/i12.jpeg';
+import imagem13 from './fotos/i13.jpg';
+import imagem14 from './fotos/i14.jpg';
+import imagem15 from './fotos/i15.jpg';
+import imagem16 from './fotos/i16.jpg';
 
 const Comment = () => {
   const [commentTimes, setCommentTimes] = useState([]);
@@ -33,30 +37,68 @@ const Comment = () => {
     return `${minutes} min`;
   };
 
+  const [replyTimes, setReplyTimes] = useState([]);
+
+  useEffect(() => {
+    const times = Array(12)
+      .fill()
+      .map(() => randomTime());
+    setReplyTimes(times);
+  }, []);
+
   const comments = [
     {
-      id: '2',
+      id: '10',
       image: imagem1,
       name: 'Joana Maria Oliveira',
-      text: 'Marcos muito obrigada! A sua fórmula caseira me fez emagrecer 10kg em poucas semanas.😍😍',
+      text: 'Alguém aqui sabe se ele realmente mostra no video e se funciona mesmo??',
       time: commentTimes[0],
       likes: 15,
+      replies: [
+        {
+          id: '1',
+          image: imagem13,
+          name: 'Fernanda',
+          text: 'Simm, no final do vídeo ele esplica certinho. Eu fiz e até agora ja perdi 4kg 😍😍',
+          time: replyTimes[2],
+          likes: 5,
+        },
+        {
+          id: '2',
+          image: imagem15,
+          name: 'Gabriela',
+          text: 'Funciona muitooo, essa fórmula do Marcos me ajudor a perder 9kg!!!',
+          time: replyTimes[3],
+          likes: 2,
+        },
+      ],
     },
     {
       id: '3',
       image: imagem2,
       name: 'Cristina Santos',
       text: 'Ele também me ajudou a perder 22kg com essa fórmula caseira, muito boa',
-      time: commentTimes[1],
+      time: replyTimes[1],
       likes: 22,
+      replies: [
+        {
+          id: '2',
+          image: imagem14,
+          name: 'Marcia',
+          text: 'Nunca tinha visto algo parecido, vou testar!😘😘😘',
+          time: commentTimes[4],
+          likes: 10,
+        },
+      ],
     },
     {
       id: '4',
-      image: imagem3,
+      image: imagem16,
       name: 'Sofia Pietra',
       text: 'Cientista Marcos, esse vídeo seu mudou a minha vida, já são 20 quilos a menos em 4 meses, agradecida 🙏🙏',
       time: commentTimes[2],
       likes: 12,
+      replies: [],
     },
     {
       id: '5',
@@ -65,6 +107,7 @@ const Comment = () => {
       text: 'Tomei essa fórmula caseira durante 1 mês, acompanhada com uma alimentação melhor, perdi 10 quilos. Obrigada Marcos!🥰',
       time: commentTimes[3],
       likes: 35,
+      replies: [],
     },
     {
       id: '6',
@@ -73,6 +116,7 @@ const Comment = () => {
       text: 'Estou MUITO feliz Marcos, há 5 meses atrás eu estava com 72kg e hoje estou com 58kg, até postei uma foto no meu perfil aqui no Facebook do antes e depois. Obrigada por compartilhar essa fórmula conosco 😘😘😘',
       time: commentTimes[4],
       likes: 16,
+      replies: [],
     },
     {
       id: '7',
@@ -81,6 +125,7 @@ const Comment = () => {
       text: 'Pessoal, eu achava que era mentira, mas hoje completa a primeira semana tomando e eu já perdi 2 quilos. 😱 Obrigada por compartilhar isso, Marcos 🥰',
       time: commentTimes[5],
       likes: 11,
+      replies: [],
     },
     {
       id: '9',
@@ -89,6 +134,7 @@ const Comment = () => {
       text: 'Gente, como é fácil fazer, né? Eu nunca imaginei que tinha algo assim.',
       time: commentTimes[6],
       likes: 32,
+      replies: [],
     },
     {
       id: '10',
@@ -97,6 +143,7 @@ const Comment = () => {
       text: 'Hoje fez 5 dias tomando e 1 klos já conseguir eliminar tô muito feliz obrigado Marcos 😍😍😍',
       time: commentTimes[7],
       likes: 27,
+      replies: [],
     },
     {
       id: '11',
@@ -105,6 +152,7 @@ const Comment = () => {
       text: 'Marcos eu já estou tomando, já eliminei 7 kls, já fez muita diferença, minhas roupas estavam todas apertadas, agora já estão começando a ficar largas, estava sentindo muita dor no joelho e agora melhorou muito depois que emagreci 🙏🙏🙏',
       time: commentTimes[8],
       likes: 18,
+      replies: [],
     },
     {
       id: '12',
@@ -113,6 +161,7 @@ const Comment = () => {
       text: 'Muito Obrigado Cientista Marcos. Já estou vendo resultado ..🌹🥰🙋',
       time: commentTimes[9],
       likes: 16,
+      replies: [],
     },
     {
       id: '13',
@@ -121,6 +170,7 @@ const Comment = () => {
       text: 'Em duas semanas comecei a ver resultados, muito boa essa fórmula caseira Marcos',
       time: commentTimes[10],
       likes: 15,
+      replies: [],
     },
     {
       id: '14',
@@ -129,6 +179,7 @@ const Comment = () => {
       text: 'Minha irmão perdeu 6 kl em 15 dias com a sua fórmula Marcos... vou começar hj 🤣🤣🤣',
       time: commentTimes[11],
       likes: 26,
+      replies: [],
     },
   ];
 
@@ -141,55 +192,127 @@ const Comment = () => {
           </div>
           <section className='fb-comments' id='2'>
             {comments.slice(0, numCommentsToShow).map((comment) => (
-              <div className='fb-comments-wrapper' key={comment.id}>
-                <table className='fb-comments-comment'>
-                  <tbody>
-                    <tr>
-                      <td rowspan='3' className='fb-comments-comment-img'>
-                        <Image src={comment.image} width={48} />
-                      </td>
-                      <td>
-                        <font className='fb-comments-comment-name'>
-                          <name>{comment.name}</name>
-                        </font>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className='fb-comments-comment-text'>
-                        {comment.text}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className='fb-comments-comment-actions'>
-                        <div className='icon-like'>
-                          <img
-                            class='x16dsc37'
-                            height='18'
-                            role='presentation'
-                            src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
-                            width='18'
-                          />
-                          <div className='qnt' style={{ float: 'right' }}>
-                            {comment.likes}
+              <div>
+                <div className='fb-comments-wrapper' key={comment.id}>
+                  <table className='fb-comments-comment'>
+                    <tbody>
+                      <tr>
+                        <td rowspan='3' className='fb-comments-comment-img'>
+                          <Image src={comment.image} width={48} />
+                        </td>
+                        <td>
+                          <font className='fb-comments-comment-name'>
+                            <name>{comment.name}</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className='fb-comments-comment-text'>
+                          {comment.text}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className='fb-comments-comment-actions'>
+                          <div className='icon-like'>
+                            <img
+                              class='x16dsc37'
+                              height='18'
+                              role='presentation'
+                              src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
+                              width='18'
+                            />
+                            <div className='qnt' style={{ float: 'right' }}>
+                              {comment.likes}
+                            </div>
                           </div>
-                        </div>
-                        <div className='icon-love'>
-                          <img
-                            class='x16dsc37'
-                            height='18'
-                            role='presentation'
-                            src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
-                            width='18'
-                          />
-                        </div>
+                          <div className='icon-love'>
+                            <img
+                              class='x16dsc37'
+                              height='18'
+                              role='presentation'
+                              src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                              width='18'
+                            />
+                          </div>
 
-                        <reply>Curtir</reply>
-                        <reply>Comentar</reply>
-                        <date>{comment.time}</date>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                          <reply>Curtir</reply>
+                          <reply>Comentar</reply>
+                          <date>{comment.time}</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  {comment.replies?.map((reply) => (
+                    <div className='fb-comments-mini' key={reply.id}>
+                      <div style={{ width: '50px' }}></div>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'row',
+                        }}
+                      >
+                        <div className='linha-vertical'></div>
+                        <table
+                          className='fb-comments-comment'
+                          style={{ marginLeft: '20px' }}
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                rowspan='3'
+                                className='fb-comments-comment-img'
+                              >
+                                <Image src={reply.image} width={48} />
+                              </td>
+                              <td>
+                                <font className='fb-comments-comment-name'>
+                                  <name>{reply.name}</name>
+                                </font>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className='fb-comments-comment-text'>
+                                {reply.text}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className='fb-comments-comment-actions'>
+                                <div className='icon-like'>
+                                  <img
+                                    class='x16dsc37'
+                                    height='18'
+                                    role='presentation'
+                                    src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
+                                    width='18'
+                                  />
+                                  <div
+                                    className='qnt'
+                                    style={{ float: 'right' }}
+                                  >
+                                    5
+                                  </div>
+                                </div>
+                                <div className='icon-love'>
+                                  <img
+                                    class='x16dsc37'
+                                    height='18'
+                                    role='presentation'
+                                    src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                                    width='18'
+                                  />
+                                </div>
+
+                                <reply>Curtir</reply>
+                                <reply>Comentar</reply>
+                                <date>{comment.time}</date>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </section>

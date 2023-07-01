@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const pageTitle = pageTitles[router.pathname] || 'Fórmula A.M.B';
   const [showPromotion, setShowPromotion] = useState(false);
-  const [visitorsCount, setVisitorsCount] = useState(100);
+  const [visitorsCount, setVisitorsCount] = useState(702);
   const [isHomePage, setIsHomePage] = useState(true);
 
   useEffect(() => {
@@ -42,12 +42,25 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newCount = Math.floor(Math.random() * 101) + 50;
+      const currentCount = visitorsCount;
+
+      const increaseProbability = Math.random();
+
+      let randomChange;
+
+      if (increaseProbability < 0.5) {
+        randomChange = Math.floor(Math.random() * (10 - 20 + 1)) + 30;
+      } else {
+        randomChange = Math.floor(Math.random() * 6) - 5;
+      }
+
+      const newCount = Math.max(currentCount + randomChange, 0);
+
       setVisitorsCount(newCount);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [visitorsCount]);
 
   useEffect(() => {
     setIsHomePage(router.pathname === '/');
