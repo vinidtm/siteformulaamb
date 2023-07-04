@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import imagem1 from './fotos/i1.jpg';
 import imagem2 from './fotos/i2.webp';
-import imagem3 from './fotos/i3.webp';
 import imagem4 from './fotos/i4.jpg';
 import imagem5 from './fotos/i5.jpg';
 import imagem6 from './fotos/i6.jpg';

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import VideoPlayer from './VideoPlayer'; 
-import VideoPlayer02 from './VideoPlayer02'; 
+import VideoPlayer from './VideoPlayer';
+import VideoPlayer02 from './VideoPlayer02';
 import Comments from './Comments';
 import Image from 'next/image';
 import headline3 from './fotos/celularGIF.gif';
 import headline3Mobile from './fotos/pcGIF.gif';
-import { useRouter } from 'next/router'; 
+import { useRouter } from 'next/router';
 
 function Header() {
   const [isMobile, setIsMobile] = useState(false);
