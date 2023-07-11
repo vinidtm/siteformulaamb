@@ -17,9 +17,11 @@ const Button = () => {
   return (
     <div className={`${styles.button} ${styles.show}`}>
       <Link href={link}>
-        <a>
-          <button>EU QUERO COMEÇAR A EMAGRECER HOJE</button>
-        </a>
+        <button>
+          {router.pathname === '/'
+            ? 'EU QUERO COMEÇAR A EMAGRECER HOJE'
+            : 'QUIERO EMPEZAR A ADELGAZAR HOY.'}
+        </button>
       </Link>
       <Script />
     </div>
