@@ -1,10 +1,66 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Button from './Button';
 
 function VideoPlayer02() {
+  const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
+
+  useEffect(() => {
+    const SECONDS_TO_DISPLAY = 741;
+    const CLASS_TO_DISPLAY = '.esconder';
+
+    let attempts = 0;
+    let elsHiddenList = [];
+    let elsDisplayed = false;
+    const elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    const alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
+    const alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+    setTimeout(() => {
+      elsHiddenList = Array.prototype.slice.call(elsHidden);
+    }, 0);
+
+    const showHiddenElements = () => {
+      elsDisplayed = true;
+      elsHiddenList.forEach((e) => (e.style.display = 'block'));
+      localStorage.setItem(alreadyDisplayedKey, true);
+      setAreSectionsDisplayed(true);
+    };
+
+    const startWatchVideoProgress = () => {
+      if (
+        typeof smartplayer === 'undefined' ||
+        !(smartplayer.instances && smartplayer.instances.length)
+      ) {
+        if (attempts >= 10) return;
+        attempts += 1;
+        return setTimeout(startWatchVideoProgress, 1000);
+      }
+
+      smartplayer.instances[0].on('timeupdate', () => {
+        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+        if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY)
+          return;
+        showHiddenElements();
+      });
+    };
+
+    if (alreadyElsDisplayed === 'true') {
+      setTimeout(() => {
+        showHiddenElements();
+      }, 100);
+    } else {
+      startWatchVideoProgress();
+    }
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6494507d898cc800097a6cee/player.js';
+      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/player.js';
     script.async = true;
     document.head.appendChild(script);
 
@@ -16,12 +72,12 @@ function VideoPlayer02() {
   return (
     <div>
       <div
-        id='vid_6494507d898cc800097a6cee'
+        id='vid_64adabeec720b5000a443d7a'
         style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
       >
         <img
-          id='thumb_6494507d898cc800097a6cee'
-          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6494507d898cc800097a6cee/thumbnail.jpg'
+          id='scr_64adabeec720b5000a443d7a'
+          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/thumbnail.jpg'
           style={{
             position: 'absolute',
             top: 0,
@@ -33,7 +89,7 @@ function VideoPlayer02() {
           }}
         />
         <div
-          id='backdrop_6494507d898cc800097a6cee'
+          id='backdrop_64adabeec720b5000a443d7a'
           style={{
             position: 'absolute',
             top: 0,
@@ -46,7 +102,7 @@ function VideoPlayer02() {
       </div>
       <link
         rel='preload'
-        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6494507d898cc800097a6cee/player.js'
+        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/player.js'
         as='script'
       />
       <link
@@ -56,18 +112,24 @@ function VideoPlayer02() {
       />
       <link
         rel='preload'
-        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/6494507d898cc800097a6cee/thumbnail.jpg'
+        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/thumbnail.jpg'
         as='image'
       />
       <link
         rel='preload'
-        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/6494506e2e6fd10009820df1/main.m3u8'
+        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64adabc680a57c00098d89a1/main.m3u8'
         as='fetch'
       />
       <link rel='dns-prefetch' href='https://cdn.converteai.net' />
       <link rel='dns-prefetch' href='https://scripts.converteai.net' />
       <link rel='dns-prefetch' href='https://images.converteai.net' />
       <link rel='dns-prefetch' href='https://api.vturb.com.br' />
+
+      {areSectionsDisplayed && (
+        <div>
+          <Button />
+        </div>
+      )}
     </div>
   );
 }

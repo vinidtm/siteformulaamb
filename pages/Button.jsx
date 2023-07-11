@@ -1,13 +1,25 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import styles from './Button.module.css';
 import Link from 'next/link';
 import Script from './Script';
 
 const Button = () => {
+  const router = useRouter();
+
+  let link;
+  if (router.pathname === '/') {
+    link = 'https://pay.hotmart.com/B84078433G?checkoutMode=10';
+  } else {
+    link = 'https://pay.hotmart.com/U84703526S?off=n84kabcl&checkoutMode=10';
+  }
+
   return (
     <div className={`${styles.button} ${styles.show}`}>
-      <Link href={'https://pay.hotmart.com/B84078433G?checkoutMode=10'}>
-        <button>EU QUERO COMEÇAR A EMAGRECER HOJE</button>
+      <Link href={link}>
+        <a>
+          <button>EU QUERO COMEÇAR A EMAGRECER HOJE</button>
+        </a>
       </Link>
       <Script />
     </div>

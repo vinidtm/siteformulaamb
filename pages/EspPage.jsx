@@ -5,7 +5,6 @@ import Progress from './progress';
 function UpsellPrimary() {
   return (
     <>
-      <Progress />
       <Home />
     </>
   );

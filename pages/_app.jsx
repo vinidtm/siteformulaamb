@@ -7,8 +7,6 @@ const pageTitles = {
   '/Page01': 'Fórmula A.M.B',
   '/Termos_de_Uso': 'Termos de Uso',
   '/Politica_de_Privacidade': 'Política de Privacidade',
-  '/Page02': 'Página 2',
-  '/Page03': 'Página 3',
 };
 
 function MyApp({ Component, pageProps }) {
@@ -62,9 +60,7 @@ function MyApp({ Component, pageProps }) {
     return () => clearInterval(interval);
   }, [visitorsCount]);
 
-  useEffect(() => {
-    setIsHomePage(router.pathname === '/');
-  }, [router.pathname]);
+ 
 
   return (
     <>
@@ -76,8 +72,10 @@ function MyApp({ Component, pageProps }) {
       {isHomePage && typeof visitorsCount === 'number' && (
         <div className='page-visitors'>
           <div className='p'>
-            <div className='visitors'>{visitorsCount}</div> pessoas estão
-            assistindo a esse vídeo.
+            <div className='visitors'>{visitorsCount}</div>
+            {router.pathname === '/'
+              ? 'pessoas estão assistindo a esse vídeo.'
+              : ' la gente está viendo este video.'}
           </div>
         </div>
       )}
