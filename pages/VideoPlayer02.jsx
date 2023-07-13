@@ -5,7 +5,7 @@ function VideoPlayer02() {
   const [areSectionsDisplayed, setAreSectionsDisplayed] = useState(false);
 
   useEffect(() => {
-    const SECONDS_TO_DISPLAY = 741;
+    const SECONDS_TO_DISPLAY = 731;
     const CLASS_TO_DISPLAY = '.esconder';
 
     let attempts = 0;
@@ -59,8 +59,9 @@ function VideoPlayer02() {
 
   useEffect(() => {
     const script = document.createElement('script');
+    script.id = 'scr_64b07d98c720b5000a445487';
     script.src =
-      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/player.js';
+      'https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64b07d98c720b5000a445487/player.js';
     script.async = true;
     document.head.appendChild(script);
 
@@ -72,12 +73,12 @@ function VideoPlayer02() {
   return (
     <div>
       <div
-        id='vid_64adabeec720b5000a443d7a'
+        id='vid_64b07d98c720b5000a445487'
         style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
       >
         <img
-          id='scr_64adabeec720b5000a443d7a'
-          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/thumbnail.jpg'
+          id='thumb_64b07d98c720b5000a445487'
+          src='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64b07d98c720b5000a445487/thumbnail.jpg'
           style={{
             position: 'absolute',
             top: 0,
@@ -89,7 +90,7 @@ function VideoPlayer02() {
           }}
         />
         <div
-          id='backdrop_64adabeec720b5000a443d7a'
+          id='backdrop_64b07d98c720b5000a445487'
           style={{
             position: 'absolute',
             top: 0,
@@ -98,11 +99,11 @@ function VideoPlayer02() {
             WebkitBackdropFilter: 'blur(5px)',
             backdropFilter: 'blur(5px)',
           }}
-        />
+        ></div>
       </div>
       <link
         rel='preload'
-        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/player.js'
+        href='https://scripts.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64b07d98c720b5000a445487/player.js'
         as='script'
       />
       <link
@@ -112,12 +113,12 @@ function VideoPlayer02() {
       />
       <link
         rel='preload'
-        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64adabeec720b5000a443d7a/thumbnail.jpg'
+        href='https://images.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/players/64b07d98c720b5000a445487/thumbnail.jpg'
         as='image'
       />
       <link
         rel='preload'
-        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64adabc680a57c00098d89a1/main.m3u8'
+        href='https://cdn.converteai.net/1db8e03a-c1fc-4fa6-b094-4a5346a615e6/64b07d83e891af000a1d5c40/main.m3u8'
         as='fetch'
       />
       <link rel='dns-prefetch' href='https://cdn.converteai.net' />
